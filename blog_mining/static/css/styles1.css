@@ -1,0 +1,32 @@
+
+#d{
+	background: rgba(0, 0, 0, 0.5);
+}
+.container1{
+	width: 100%;
+	margin:auto;
+	overflow:hidden;
+
+}
+.cards1{
+	align-content: center;
+	float:left;
+	width:30%;
+	text-align:center;
+	background-color:none;
+	/* box-shadow:1px 1px 6px 2px #555; */
+	box-shadow:1px 1px 6px 2px darkgray;
+	margin: 10px 10px;
+	min-height:320px;
+	padding:10px;
+	padding-top: 20px;
+	box-sizing:border-box;
+	/* color: white; */
+	color: darkgray;
+}
+
+.cards1 img{
+	width:100px;
+	height:100px;
+}
+

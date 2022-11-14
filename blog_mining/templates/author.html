@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<script>
+function myFunction() {
+  alert("Please check your mail!!!");
+}
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="assets/img/favicon.ico">
+
+<title>Blog Mining</title>
+
+<!-- Bootstrap core CSS -->
+<link href="../static/css/bootstrap.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="../static/css/styles.css" rel="stylesheet">
+<link href="../static/css/styles1.css" rel="stylesheet">
+
+
+<!-- Fonts -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+
+</head>
+<body style="color:rgba(0,0,0,0.44)">
+
+<!-- Begin Nav
+================================================== -->
+<nav class="navbar navbar-toggleable-md navbar-light bg-white fixed-top mediumnavigation">
+<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="container">
+	<!-- Begin Logo -->
+	<a class="navbar-brand" href="{{ url_for('index') }}">
+	<img style="padding-top:4px" height="50" width="30" src="../static/logo.png" alt="logo">
+	</a>
+	<!-- End Logo -->
+	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+		<!-- Begin Menu -->
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item active">
+			<a style="color:rgba(0,0,0,0.5)" class="nav-link" href="{{ url_for('index') }}">Stories <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link" href="{{ url_for('categories',token=token) }}">Categories</a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link" href="{{ url_for('author') }}">Author</a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link" href="{{ url_for('login') }}"><img title="Admin Login" style="padding-top: 2px;padding-bottom:4.5px" height="21" width="16" src="../static/login.png" ></a>
+			</li>
+		</ul>
+		<!-- End Menu -->
+		<!-- Begin Search -->
+		<form action="/search" method="POST" style="border:1px solid rgba(0,0,0,.1);border-radius:30px;" class="form-inline my-2 my-lg-0">
+			<input style="padding-right:0px;margin:none;border:none" class="form-control mr-sm-2" name="search_content" type="text" placeholder="Search">
+			<button style="background-color: white;border:none;padding-left:0px;margin:none;border-radius:30px" type="submit"><img height="25" width="25" src="../static/search.png"></button>
+			<!--
+			<span class="search-icon"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z"></path></svg></span> -->
+		</form>
+		<!-- End Search -->
+	</div>
+</div>
+</nav>
+<!-- End Nav
+================================================== -->
+
+<!-- Begin Site Title
+================================================== -->
+<div class="container">
+	<div class="mainheading">
+		<h1 class="sitetitle">Blog Mining</h1>
+		<p class="lead">
+			<!-- Bootstrap theme, medium style, simply perfect for bloggers -->
+			Techie Blog, expressing views, facilitates information architecture
+		</p>
+	</div>
+<!-- End Site Title
+================================================== -->
+
+	<!-- Begin Featured
+	================================================== -->
+	<section class="featured-posts">
+	<div class="section-title">
+		<h2><span>About Us</span></h2>
+	</div>
+	</section>
+
+		<!-- begin post -->
+			<div class="row">
+			<div style="padding-left: 50px;margin:0px;">
+				<div class="mainheading">
+					<div class="row post-top-meta authorpage">
+						<div class="col-md-10 col-xs-12">
+							<h5 style="font-family: Arial Rounded MT Bold">ADMIN</h5>
+							<span class="author-description" style="color:rgba(0,0,0,0.4)">Technical insights of latest appliances is described in an elementary level for quick acceptance of viewable information. View of blog is in perspective for easy grasp of deluge content. It allows to diverge important information source for the user’s ideas. This subjective information helps in understanding a blogger’s views and observations about various topics. The theme running behind techie blog is of allowing user to grip the overloaded information in an easier fashion. Acknowledging of details and acquirance of knowledge over a bundled information by a quick explore is introduced by the author. </span>
+							<div class="sociallinks"><a  target="_blank" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a> <span class="dot"></span> <a target="_blank" href="https://mail.google.com/mail/"><i class="fa fa-google-plus"></i></a></div>
+						</div>
+						<div class="col-md-2 col-xs-12">
+							<img class="author-thumb" src="../static/admin.jpeg" alt="Sal">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end post -->
+
+	
+
+	<!-- End Featured
+	================================================== -->
+
+	<!-- Begin Featured
+	================================================== -->
+	<section class="featured-posts">
+	<div class="section-title">
+		<h2><span>Contact Us</span></h2>
+	</div>
+	</section>
+
+	<!-- begin post -->
+	<!--
+		<div class="container1" >
+		<article class="cards1" style="width:25%;padding-top:50px;height:510px;">
+			<br><br>
+			<center><p style="font-size:15px;">ORGANIZERS</p></center><br>
+			<center><img style="width: 40px;height: 40px;" src="../static/mail.png"></center><span style="font-size:15px;">&nbsp;&nbsp;EMAIL :<center>lhostadlogin127@gmail.com</center> </span><br><br>
+			<center><img style="width: 40px;height: 40px" src="../static/phone.png" ></center><center><span style="font-size:15px">&nbsp;&nbsp;&nbsp;&nbsp;PHONE : 9998887776</span></center>
+		</article>
+		<article class="cards1" style="width:70%;padding-top:20px;padding-bottom: 10px;height:510px;">
+			<p style="font-size: 16px">How Can We Help?</p><br>
+			<form action="/author" method="POST">
+			<p style="font-size:16px;padding-left: 0px;">Email</p><input style="background-color: lightgray;width:170px" type="text" name="email" required><br><br>
+			<p style="font-size:16px;padding-left: 0px;">Subject</p><input style="background-color: lightgray;width:170px" type="text" name="sub" required>
+			<br><br><p>Message</p><textarea name="msg" cols="40" rows="4" style="background-color: lightgray;"></textarea><br><br>
+			<input onclick="myFunction()" style="background-color: lightgray;color:rgba(0, 0, 0, 0.44);" type="submit" value="SUBMIT">
+		</article>
+		</div>
+	-->
+	<!-- end post color:#474C48-->
+	<div class="content">
+    
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          
+
+          <div class="row justify-content-center">
+            <div class="col-md-6">
+              <!-- <p style="font-size: 30px;color:rgba(0,0,0,0.44);font-family: Arial Rounded MT Bold" class="heading mb-4">Let's talk about everything!</p> -->
+
+              <br><br>
+
+              <p><img height="1000" width="800" src="../static/contact.png" alt="Image" class="img-fluid"></p>
+
+
+            </div>
+            <div class="col-md-6">
+              
+              <form class="mb-5" action="/author" method="POST" id="contactForm" name="contactForm">
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <input style="background: #f3f3f3;border:none;font-family:calibri;padding:10px;height:50px;width:100%;" type="text" class="form-control" name="name" id="name" placeholder="Your name">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <input style="background: #f3f3f3;border:none;font-family:calibri;padding:10px;height:50px;width:100%;" type="email" class="form-control" name="email" id="email" placeholder="Email">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <input style="background: #f3f3f3;border:none;font-family:calibri;padding:10px;height:50px;width:100%;" type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <textarea style="background: #f3f3f3;border:none;font-family:calibri;padding:10px;" class="form-control" name="message" id="message" cols="30" rows="7" placeholder="Write your message"></textarea>
+                  </div>
+                </div>  
+                <div class="row">
+                  <div class="col-12">
+                    <input onclick="myFunction()" style="background: #f3f3f3;color: rgba(0,0,0,0.55);border:none;font-family:calibri;height:50px;" type="submit" value="Send Message" class="btn btn-primary rounded-0 py-2 px-4">
+                  <span class="submitting"></span>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<center><p style="font-family: calibri light;"><img style="margin-bottom:3px;" height="20" width="20" src="../static/phone.png"> &nbsp;9997776665 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img style="margin-bottom:3px;" height="15" width="20" src="../static/mail.png"> &nbsp;lhostadlogin127@gmail.com &nbsp;&nbsp;&nbsp;&nbsp;<img style="margin-bottom:3px;" height="17" width="12" src="../static/location.png"> &nbsp;Kukatpally, Hyderabad</p></center>
+
+
+	
+
+	<!-- End Featured
+	================================================== -->
+
+
+<!-- Begin Footer
+	================================================== -->
+	<div class="footer">
+		<p class="pull-left">
+			 Copyright &copy; 2022 Blog Mining
+		</p>
+		<p class="pull-right">
+			Get in touch via <a target="_blank" href="{{ url_for('author') }}">source</a>
+		</p>
+		<div class="clearfix">
+		</div>
+	</div>
+	<!-- End Footer
+	================================================== -->
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>

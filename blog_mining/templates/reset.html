@@ -1,0 +1,50 @@
+<html>
+<head>
+  <title>Blog Mining</title>
+<style>
+.textbox{
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 25%;
+  height: 40px;
+}
+.submit,button{
+  width: 8%;
+  height: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #B2BEB5;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-family: Bahnschrift;
+  font-size: 16px;
+}
+button{
+  width: 16%;
+  margin-left: 5px;
+}
+p,span{
+  font-family: Bahnschrift;
+}
+a{
+  text-decoration: none;
+  font-size: 15px;
+  color: #B2BEB5;
+}
+</style>
+</head>
+<body style="color: #B2BEB5">
+  <div style="float:left;width:65%">
+    <img height="550" width="750" src="../static/background.svg">
+  </div>
+  <form action="/reset" method="POST" style="padding-top:150px;">
+    <p>{{msg}}</p><br>
+    {% for mesg in get_flashed_messages() %}
+    <p>{{ mesg }}</p>
+    {% endfor %}
+    <br>
+    <p>EMAIL</p><input type="email" name="email" class="textbox" required><br><br>
+    <span><input class="submit" type="submit" value="SUBMIT"></span>
+    <button><span><a href="{{url_for('login')}}">BACK&nbsp;TO&nbsp;LOGIN</a></span></button>
+  </form>
+</body>
+</html>

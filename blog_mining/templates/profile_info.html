@@ -1,0 +1,111 @@
+<html>
+<head>
+<style>
+label{
+    padding: 10px;
+    padding-top: 15px;
+    padding-left: 13px;
+    background: none;
+    border: 1px solid rgba(0, 0, 0, 0.1); 
+    display: table;
+    color: #B2BEB5;
+    height: 25px;
+    width: 9%;
+    font-family: Bahnschrift;
+    font-size: 16px;
+     }
+input[type="file"] {
+    display: none;
+}
+.textbox,.textbox1
+{
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 25%;
+  height: 40px;
+}
+.textbox1{
+  height: 250px;
+}
+.submit,button{
+  width: 8%;
+  height: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #B2BEB5;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-family: Bahnschrift;
+  font-size: 16px;
+}
+button{
+  width: 16%;
+  margin-left: 5px;
+}
+p,span{
+  font-family: Bahnschrift;
+}
+a{
+  font-family: Bahnschrift;
+  text-decoration: none;
+  font-size: 16px;
+  color: #B2BEB5;
+}
+input{
+  border-top: none;
+}
+input[value] {
+  color: #B2BEB5;
+  font-size: 15px;
+}
+input[type=submit]{
+  width: 8%;
+  height: 40px;
+  padding-left: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #B2BEB5;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-family: Bahnschrift;
+  font-size: 16px;
+}
+input[type="text"],input[type="email"],input[type="number"]{
+  padding-top: 0px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-top: 0px;
+}
+</style>
+<title>Blog Mining</title>
+</head>
+<body style="color: #B2BEB5">
+  <div style="float:left;width:65%;padding-right:5px;">
+    <img height="550" width="750" src="../static/background.svg">
+  </div>
+  <a style="float:right;padding-top:5px;padding-right:5px;" href="{{url_for('login')}}">SIGN OUT</a><br><br>
+  <br><br><br><br><br><br>
+  <p style="margin:0px;padding:0px;line-height:30px;">Account info:</p>
+  <p style="margin:0px;padding:0px;line-height:30px;">Username: {{token}}</p>
+  <p style="margin:0px;padding:0px;line-height:30px;">Email: {{email}}</p>
+  <p style="margin:0px;padding:0px;line-height:30px;">Phone : {{contact_number}}</p>
+  <p style="margin:0px;padding:0px;line-height:30px;">State: {{state}}</p>
+  <p style="margin:0px;padding:0px;line-height:30px;">City: {{city}}</p><br>
+  <u><a href="{{url_for('blog_info',token=token)}}">Back to Blog Info Page</a></u>
+  <!--
+  <form action="/profile_info/{{token}}" method="POST" enctype="multipart/form-data" style="padding-top:0px;">
+    <a style="float:right;padding-top:5px;padding-right:5px;" href="{{url_for('login')}}">SIGN OUT</a><br><br>
+    {% for mesg in get_flashed_messages() %}
+    <p>{{ mesg }}</p>
+    {% endfor %}<br>
+    <p>USERNAME</p><input type="text" name="username" class="textbox" value="{{username}}" disabled="disabled" required><br><br>
+    <p>EMAIL</p><input type="email" name="email" class="textbox" value="{{email}}" disabled="disabled" required><br><br>
+    <p>CONTACT NUMBER</p><input type="number" name="contact_number" class="textbox" value="{{contact_number}}" min="10"  maxlength="10" required><br><br>
+    <p>CITY</p><input type="text" name="city" class="textbox" value="{{city}}" required><br><br>
+    <p>STATE</p><input type="text" name="state" class="textbox" value="{{state}}" required><br><br>
+    <br>
+    <span><input class="submit" type="submit" value="UPDATE"></span><span style="padding-left:10px;"><button><a href="{{url_for('update_content',token=token)}}">BACK TO UPDATE PAGE</a></button></span><br><br><br><br><br>
+  </form>
+-->
+</body>
+</html>

@@ -1,0 +1,56 @@
+<html>
+<head>
+<script type="text/javascript">
+  function Validate() {
+      var password = document.getElementById("id3p").value;
+      var confirmPassword = document.getElementById("id3cp").value;
+      if (password != confirmPassword) {
+          alert("Passwords didnt match!!!!!!!!!");
+          return false;
+      }
+      return true;
+  }
+</script>
+<title>Blog Mining</title>
+<style>
+.textbox{
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 25%;
+  height: 40px;
+}
+.submit,button{
+  width: 8%;
+  height: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #B2BEB5;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-family: Bahnschrift;
+  font-size: 16px;
+}
+button{
+  width: 16%;
+  margin-left: 5px;
+}
+p,span{
+  font-family: Bahnschrift;
+}
+a{
+  text-decoration: none;
+  font-size: 15px;
+  color: #B2BEB5;
+}
+</style>
+</head>
+<body style="color: #B2BEB5">
+  <div style="float:left;width:65%">
+    <img height="550" width="750" src="../static/background.svg">
+  </div>
+  <form action="/reset_email/{{token}}" method="POST" style="padding-top:150px;">
+    <p>NEW PASSWORD</p><input type="password" name="pwd" id="id3p" class="textbox" required><br><br>
+    <p>CONFIRM NEW PASSWORD</p><input type="password" name="cpwd" id="id3cp" class="textbox" required><br><br>
+    <span><input class="submit" type="submit" value="SUBMIT" onclick="return Validate()"></span>
+  </form>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<html>
+<head>
+<style>
+label{
+    padding: 10px;
+    padding-top: 15px;
+    padding-left: 13px;
+    background: none;
+    border: 1px solid rgba(0, 0, 0, 0.1); 
+    display: table;
+    color: #B2BEB5;
+    height: 25px;
+    width: 9%;
+    font-family: Bahnschrift;
+    font-size: 16px;
+     }
+input[type="file"] {
+    display: none;
+}
+.textbox,.textbox1
+{
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 25%;
+  height: 40px;
+}
+.textbox1{
+  height: 250px;
+}
+.submit,button{
+  width: 8%;
+  height: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #B2BEB5;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-family: Bahnschrift;
+  font-size: 16px;
+}
+input[value]{
+  color: #B2BEB5;
+}
+button{
+  width: 16%;
+  margin-left: 5px;
+}
+p,span{
+  font-family: Bahnschrift;
+}
+a{
+  font-family: Bahnschrift;
+  text-decoration: none;
+  font-size: 16px;
+  color: #B2BEB5;
+}
+</style>
+<title>Blog Mining</title>
+</head>
+<body style="color: #B2BEB5">
+  <div style="float:left;width:65%">
+    <img height="850" width="750" src="../static/background.svg">
+  </div>
+  <form action="/blog_info_edit/{{token1}}" method="POST" enctype="multipart/form-data" style="padding-top:0px;">
+    <a style="float:right;padding-top:5px;padding-right:5px;" href="{{url_for('login')}}">SIGN OUT</a><br>
+    {% for mesg in get_flashed_messages() %}
+    <p>{{ mesg }}</p>
+    {% endfor %}
+    <p style="margin:0px;padding:0px;line-height:35px;">Number of Views : {{num_views}}</p>
+    <p style="margin:0px;padding:0px;line-height:35px;margin-bottom:20px;">Updated Date : {{updated_on}}</p>
+    <p>CATEGORY</p><input type="text" name="category" class="textbox" value="{{category}}" required>
+    <p>TITLE</p><input type="text" name="title" class="textbox" value="{{title}}" required>
+    <p>CONTENT</p><textarea style="color: #B2BEB5;" name="content" cols="40" rows="40" class="textbox1" required>{{content}}</textarea>
+    <br>
+    <br>
+    <br>
+    <span><label>UPLOAD IMAGE
+    <input type="file" name="file" value="{{photo}}" accept="image/png, image/jpg, image/jpeg">
+    </label></span>
+    <br><br>
+    <span><input class="submit" type="submit" value="UPDATE"></span>&nbsp;
+    <span><button><a href="{{url_for('blog_info',token=token)}}">BACK TO BLOG INFO PAGE</a></button>
+  </form>
+</body>
+</html>

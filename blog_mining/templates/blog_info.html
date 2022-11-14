@@ -1,0 +1,88 @@
+<html>
+<head>
+<style>
+label{
+    padding: 10px;
+    padding-top: 15px;
+    padding-left: 13px;
+    background: none;
+    border: 1px solid rgba(0, 0, 0, 0.1); 
+    display: table;
+    color: #B2BEB5;
+    height: 25px;
+    width: 9%;
+    font-family: Bahnschrift;
+    font-size: 16px;
+     }
+input[type="file"] {
+    display: none;
+}
+.textbox,.textbox1
+{
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 25%;
+  height: 40px;
+}
+.textbox1{
+  height: 250px;
+}
+.submit{
+  width: 8%;
+  height: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #B2BEB5;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-family: Bahnschrift;
+  font-size: 16px;
+}
+input.value{
+  color: #B2BEB5;
+}
+button{
+  width: 16%;
+  margin-left: 5px;
+}
+p,span{
+  font-family: Bahnschrift;
+}
+a{
+  font-family: Bahnschrift;
+  text-decoration: none;
+  font-size: 16px;
+  color: #B2BEB5;
+}
+td{
+  font-family: Bahnschrift;
+}
+</style>
+<title>Blog Mining</title>
+</head>
+<body style="color: #B2BEB5">
+  <div style="float:left;width:65%">
+    <img height="900" width="750" src="../static/background.svg">
+  </div>
+  <form action="/blog_info/{{token}}" method="POST" style="padding-top:0px;">
+    <a style="float:right;padding-top:5px;padding-right:5px;" href="{{url_for('login')}}">SIGN OUT</a><br>
+    <!--
+    {% for mesg in get_flashed_messages() %}
+    <p>{{ mesg }}</p>
+    {% endfor %} -->
+    <br><br>
+    <p style="margin:0px;padding:0px;line-height:25px;">Number of posts updated: {{num_posts}}</p>
+    <table style="margin-bottom:6px;">
+    {% for row in lst %}
+    <p><tr>
+      <td>{{row}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td><a href="{{url_for('blog_info_edit',token=token+'_'+row)}}"><img height="10" width="10" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAws7dKGTGSMiaC4zZOLPzmHhiKKKx7ubWHym5GWxCOJXgU-83BqA7STxuzlqw1UXYYgw&usqp=CAU"></a>&nbsp;&nbsp;</td>
+      <td><button name="title" value="{{row}}" type="submit" style="text-decoration:none;border:none;background-color:white;"><img height="10" width="10" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtwVJNpV5HE687NqV2hnefia6_VNxYNjRA9LkADnEaXKaQSwVZABmO8yoiKrN3ETrIeEs&usqp=CAU"></button></td></button>
+    </tr></p>
+    {% endfor %}
+    </table>
+    <br>
+    <u><a style="font-size:16px;" href="{{url_for('update_content',token=token)}}">Update a New Post</a></u>&nbsp;&nbsp;&nbsp;&nbsp;<u><a style="font-size:16px;" href="{{url_for('profile_info',token=token)}}">Personal Info</a></u>
+    
+  </form>
+</body>
+</html>
