@@ -168,8 +168,8 @@ app.config['MYSQL_DB'] = 'blog_mining'
 mysql = MySQL(app)
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = '19hp5a1202.alit@apssdc.info'
-app.config['MAIL_PASSWORD'] = 'HighSpeed@126578'
+app.config['MAIL_USERNAME'] = ''
+app.config['MAIL_PASSWORD'] = ''
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 
